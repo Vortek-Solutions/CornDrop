@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "FastAPI",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",  // Caminho para o arquivo principal Python
+      "console": "integratedTerminal",
+      "preLaunchTask": "Run Task"  // Chama a tarefa definida no tasks.json
+    }
+  ]
+}
