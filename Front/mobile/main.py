@@ -1,17 +1,20 @@
 import flet as ft
+import subprocess
 from telas.menu import criar_menu
 from telas.rotina import TelaRotina
 from telas.insumo import TelaInsumo
 from telas.tech import TelaTech
 from telas.perfil import TelaPerfil
 
+from styles import Syles
+
 def main(page: ft.Page):
     page.title = "CornDrop"
-    page.window.max_width = 400
-    page.window.max_height = 700
+
     page.window.width = 400
     page.window.height = 700
     page.window.resizable = False
+    page.bgcolor = Syles.color('white')
     
     conteudo = ft.Column(expand=True)
 
@@ -33,7 +36,7 @@ def main(page: ft.Page):
     page.add(menu,conteudo)
     navegar("Rotina")
     
-    #page.window_close() #PARA FECHAR A JANELA NO COMPUTADOR
+    #page.window.close() #PARA FECHAR A JANELA NO COMPUTADOR
     #subprocess.run(["flet", "run", "main.py", "--android"]) #PARA RODAR O ANDROID NO FLET
 
 ft.app(target=main)
