@@ -4,7 +4,6 @@ from telas.menu import criar_menu
 from telas.rotina import TelaRotina
 from telas.insumo import TelaInsumo
 from telas.tech import TelaTech
-from telas.perfil import TelaPerfil
 
 from styles import Syles
 
@@ -26,8 +25,6 @@ def main(page: ft.Page):
             conteudo.controls.append(TelaInsumo())
         elif nome_tela == "Tech":
             conteudo.controls.append(TelaTech())
-        elif nome_tela == "Perfil":
-            conteudo.controls.append(TelaPerfil())
 
         page.update()
 

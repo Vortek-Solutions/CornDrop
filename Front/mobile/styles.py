@@ -1,9 +1,6 @@
-
-
 class Syles:
     
     def color(color):
-        
         
         colors = {
             'white':'#FFFFFF',
