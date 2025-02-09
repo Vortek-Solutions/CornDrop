@@ -20,9 +20,9 @@ def main(page: ft.Page):
     def navegar(nome_tela):
         conteudo.controls.clear()
         if nome_tela == "Rotina" :
-            conteudo.controls.append(TelaRotina())
+            conteudo.controls.append(TelaRotina(page))
         elif nome_tela == "Insumo":
-            conteudo.controls.append(TelaInsumo())
+            conteudo.controls.append(TelaInsumo(page))
         elif nome_tela == "Tech":
             conteudo.controls.append(TelaTech())
 

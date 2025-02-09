@@ -1,12 +1,14 @@
 import flet as ft
 from styles import Syles
 
-def TelaRotina():
+from janela.add_rotina import ModRotina
+
+def TelaRotina(page: ft.Page):
     
     frame_brutton = ft.Container(
             content=ft.Row([
                     ft.Text(f'Rotina',size=24,color='#000000',weight=ft.FontWeight.BOLD),
-                    ft.ElevatedButton(text="Add", on_click=lambda e: print('botão clicado'),bgcolor=Syles.color('bg_button'),color = Syles.color('white'))
+                    ft.ElevatedButton(text="Add", on_click=lambda e: ModRotina(page),bgcolor=Syles.color('bg_button'),color = Syles.color('white'))
                     ],
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
         padding=10,border_radius=10,width=400,height=50)
