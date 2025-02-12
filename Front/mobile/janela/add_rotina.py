@@ -11,8 +11,8 @@ def ModRotina(page: ft.Page):
         page.update()
     
 
-    dispositivo = ft.TextField(label="Dispositivo", border_radius=8, filled=True)
-    insumo = ft.TextField(label="Insumo", border_radius=8, filled=True)
+    dispositivo = ft.Dropdown(label="Dispositivo", border_radius=8, filled=True)
+    insumo = ft.Dropdown(label="Insumo", border_radius=8, filled=True)
     nome_da_rotina = ft.TextField(label="Nome da Rotina", border_radius=8, filled=True)
     quantidade = ft.TextField(label="Quantidade", border_radius=8, filled=True)
     op_horario = ft.TextField(label="Horário", border_radius=8, filled=True, read_only=True)

@@ -1,13 +1,13 @@
 import flet as ft
 from styles import Syles
-from janela.add_rotina import ModRotina
+from janela.add_insumo import ModInsumo
 
 def TelaInsumo(page: ft.Page):
     frame_brutton = ft.Container(
         content=ft.Row(
             [
                 ft.Text("Insumo",size=24,color="#000000",weight=ft.FontWeight.BOLD),
-                ft.ElevatedButton(text="Adicionar Insumo",on_click=lambda e: ModRotina(page),bgcolor=Syles.color("bg_button"),color=Syles.color("white"),style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10),padding=ft.Padding(10, 5, 10, 5))),
+                ft.ElevatedButton(text="Adicionar Insumo",on_click=lambda e: ModInsumo(page),bgcolor=Syles.color("bg_button"),color=Syles.color("white"),style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10),padding=ft.Padding(10, 5, 10, 5))),
             ],
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
         ),

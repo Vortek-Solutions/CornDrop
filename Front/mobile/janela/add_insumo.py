@@ -1,27 +1,30 @@
 import flet as ft
 
 def ModInsumo(page: ft.Page):
-    
-    callback = page
-    page.clean()
-    page.title = "Adicionar Insumo"
-    
-    nome_insumo = ft.TextField(label="Nome")
-    data = ft.TextField(label="Data")
-    preco = ft.TextField(label="Preço")
-    quantidade = ft.TextField(label="Quantidade")
 
-    adicionar_button = ft.ElevatedButton(text="Adicionar",on_click=lambda _: print("Adicionar clicked!"),color=ft.colors.GREEN)
-    voltar_button = ft.ElevatedButton(text="Voltar",on_click = lambda e: voltar())
-
+    def voltar(e):
+        dialog.open = False
+        page.update()
+    
+    insumo = ft.TextField(label="Nome do Insumo", border_radius=8, filled=True)
+    data = ft.TextField(label="Data", border_radius=8, filled=True)
+    preco = ft.TextField(label="Preço", border_radius=8, filled=True, read_only=True)
+    quantidade = ft.TextField(label="Quantidade", border_radius=8, filled=True)
+    
+    adicionar_button = ft.ElevatedButton(text="Adicionar", on_click=lambda e: print("Adicionar clicked!"),bgcolor=ft.colors.GREEN, color=ft.colors.WHITE,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10)))
+    
+    voltar_button = ft.ElevatedButton(text="Voltar", on_click=voltar,bgcolor=ft.colors.RED, color=ft.colors.WHITE,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10)))
+    
     form = ft.Column(
         [
-            voltar_button,nome_insumo,
-            ft.Row([data, preco]),quantidade, adicionar_button
-        ]
+            ft.Text("Adicionar Novo Insumo", size=20, weight=ft.FontWeight.BOLD),
+            insumo,data,preco,quantidade,
+            ft.Row([voltar_button, adicionar_button], alignment=ft.MainAxisAlignment.SPACE_EVENLY)
+        ],
+        spacing=15,alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER
     )
-
-    page.add(form)
     
-    def voltar():
-        page.clean()
+    dialog = ft.AlertDialog(content=form)
+    page.dialog = dialog
+    dialog.open = True
+    page.update()
