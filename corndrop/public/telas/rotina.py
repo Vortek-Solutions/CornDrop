@@ -1,5 +1,5 @@
 import flet as ft
-from styles import Syles
+from styles import Styles
 from janela.add_rotina import ModRotina
 
 def TelaRotina(page: ft.Page):
@@ -7,7 +7,7 @@ def TelaRotina(page: ft.Page):
         content=ft.Row(
             [
                 ft.Text("Rotina",size=24,color="#000000",weight=ft.FontWeight.BOLD),
-                ft.ElevatedButton(text="Adicionar Rotina",on_click=lambda e: ModRotina(page),bgcolor=Syles.color("bg_button"),color=Syles.color("white"),style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10),padding=ft.Padding(10, 5, 10, 5))),
+                ft.ElevatedButton(text="Adicionar Rotina",on_click=lambda e: ModRotina(page),bgcolor=Styles.color("bg_button"),color=Styles.color("white"),style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10),padding=ft.Padding(10, 5, 10, 5))),
             ],
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
         ),
@@ -25,7 +25,7 @@ def TelaRotina(page: ft.Page):
                 ],
                 alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
             ),
-            padding=15,border_radius=12,bgcolor=Syles.color("bg_frame"),width=450,height=80,shadow=ft.BoxShadow(blur_radius=4, spread_radius=1, color=ft.colors.GREY_300),
+            padding=15,border_radius=12,bgcolor=Styles.color("bg_frame"),width=450,height=80,shadow=ft.BoxShadow(blur_radius=4, spread_radius=1, color=ft.colors.GREY_300),
         )
 
         rotinas_scroll.controls.append(frame)

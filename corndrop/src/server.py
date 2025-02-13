@@ -1,11 +1,11 @@
 from fastapi import FastAPI
-from scr.shemas import Rotina
+from src.shemas import Rotina
 
 app = FastAPI()
 
 rotinas = []
 
-@app.post("/rotinas/add")
+@app.post("/corndrop/rotinas/add")
 def adicionar_rotina(rotina: Rotina):
     if rotinas:
         novo_id = max(r.id_rotina for r in rotinas) + 1
@@ -16,6 +16,6 @@ def adicionar_rotina(rotina: Rotina):
     rotinas.append(rotina)
     return rotina
 
-@app.get("/rotinas/")
+@app.get("/corndrop/rotinas/")
 def listar_rotinas():
     return rotinas

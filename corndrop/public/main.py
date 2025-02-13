@@ -4,7 +4,7 @@ from telas.menu import criar_menu
 from telas.rotina import TelaRotina
 from telas.insumo import TelaInsumo
 from telas.tech import TelaTech
-from styles import Syles
+from styles import Styles
 
 def main(page: ft.Page):
     page.title = "CornDrop"
@@ -13,7 +13,7 @@ def main(page: ft.Page):
     page.window.height = 700
     page.window.resizable = True
 
-    page.bgcolor = Syles.color('white')
+    page.bgcolor = Styles.color('white')
 
     conteudo = ft.Container(content=ft.Column(expand=True, alignment=ft.MainAxisAlignment.START),padding=ft.padding.all(10), width=page.window.width,  height=page.window.height)
 

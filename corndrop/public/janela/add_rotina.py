@@ -1,7 +1,10 @@
 import flet as ft
 
+from access import Access
+from styles import MessageBox
+
 def ModRotina(page: ft.Page):
-    
+    msg = MessageBox()
     def option_horario(e):
         op_horario.label = op.value
         page.update()
@@ -10,6 +13,16 @@ def ModRotina(page: ft.Page):
         dialog.open = False
         page.update()
     
+    def adicionarRotina(e,):
+        result = Access.addRotina(dispositivo.value,insumo.value,nome_da_rotina.value,quantidade.value,op_horario.value)
+        if result == True:
+            dialog.open = False
+            page.update()
+            msg.showinfo("Status","Rotina Adicionada!")
+        else:
+            dialog.open = False
+            page.update()
+            msg.showinfo("Status","Rotina não adicionada!")
 
     dispositivo = ft.Dropdown(label="Dispositivo", border_radius=8, filled=True)
     insumo = ft.Dropdown(label="Insumo", border_radius=8, filled=True)
@@ -19,7 +32,7 @@ def ModRotina(page: ft.Page):
     
     op = ft.Dropdown(on_change=option_horario,options=[ft.dropdown.Option("Horário"),ft.dropdown.Option("Intervalo")],label="Tipo de Horário",border_radius=8,filled=True)
     
-    adicionar_button = ft.ElevatedButton(text="Adicionar", on_click=lambda e: print("Adicionar clicked!"),bgcolor=ft.colors.GREEN, color=ft.colors.WHITE,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10)))
+    adicionar_button = ft.ElevatedButton(text="Adicionar", on_click=adicionarRotina,bgcolor=ft.colors.GREEN, color=ft.colors.WHITE,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10)))
     
     voltar_button = ft.ElevatedButton(text="Voltar", on_click=voltar,bgcolor=ft.colors.RED, color=ft.colors.WHITE,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10)))
     
