@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from models import Rotina
+from scr.shemas import Rotina
 
 app = FastAPI()
 

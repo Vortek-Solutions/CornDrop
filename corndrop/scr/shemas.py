@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 from typing import Optional
-import shortuuid
 
 class Rotina(BaseModel):
     id_rotina: int = 0
