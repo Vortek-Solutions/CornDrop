@@ -40,7 +40,7 @@ def main(page: ft.Page):
 
     page.window.on_resize = redimensionar_tela
 
-    #page.window.close() #PARA FECHAR A JANELA NO COMPUTADOR
-    #subprocess.run(["flet", "run", "main.py", "--android"]) #PARA RODAR O ANDROID NO FLET
+    page.window.close() #PARA FECHAR A JANELA NO COMPUTADOR
+    subprocess.run(["flet", "run", "public/main.py", "--android"]) #PARA RODAR O ANDROID NO FLET
 
 ft.app(target=main)

@@ -18,11 +18,13 @@ def ModRotina(page: ft.Page):
         if result == True:
             dialog.open = False
             page.update()
-            msg.showinfo("Status","Rotina Adicionada!")
+            print("Rotina Adicionada!")
+            #msg.showinfo("Status","Rotina Adicionada!")
         else:
             dialog.open = False
             page.update()
-            msg.showinfo("Status","Rotina não adicionada!")
+            print("Rotina não adicionada!")
+            #msg.showinfo("Status","Rotina não adicionada!")
 
     dispositivo = ft.Dropdown(label="Dispositivo", border_radius=8, filled=True)
     insumo = ft.Dropdown(label="Insumo", border_radius=8, filled=True)

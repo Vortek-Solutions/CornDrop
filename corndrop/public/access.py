@@ -24,25 +24,23 @@ class Access():
 
     def listRotinas():
 
-        response = requests.get(api_listRotinas)
-        fornecedores_api = response.json()
+        response = requests.get(api_listRotinas,timeout=5)
+        rotina_api = response.json()
         
-        fornecedores = []
+        rotinas = []
             
-        for fornecedor in fornecedores_api:
+        for rotina in rotina_api:
             
-            fornecedores.append({
-                "id": f"{fornecedor.get('fornecedorId')}",
-                "nome": fornecedor.get('razaoSocial'),
-                "cnpj": fornecedor.get('cnpj'),
-                "endereco": fornecedor.get('endereco'),
-                "status": fornecedor.get('ativo'),
-                "email": fornecedor.get('email'),
-                "telefone": fornecedor.get('telefone'),
-                "cidade": fornecedor.get('cidade'),
-                "estado": fornecedor.get('estado'),
-                "pais": fornecedor.get('pais'),
-                "inscricaoEstadual": fornecedor.get('inscricaoEstadual'),
-            })
-        return fornecedores 
+            '''rotinas.append({
+                "idRotina": f"{rotina.get('id_rotina')}",
+                "nomeDispositivo": rotina.get('dispositivo'),
+                "insumo": rotina.get('insumo'),
+                "nomeRotina": rotina.get('nome_rotina'),
+                "qtd": rotina.get('quantidade'),
+                "horario": rotina.get('horario'),
+                "intervalo": rotina.get('intervalo'),
+            })'''
+            
+            rotinas.append({"idRotina": str(rotina.get("id_rotina"))})
+        return rotinas 
     
